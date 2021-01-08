@@ -18,8 +18,7 @@ const numberOfBorrows = (accounts, books) => {
   return borrowsNumber; 
 }
 
-const getBooksPossessedByAccount = ({ id }, books, authors) => {
-  //this is the booksInPossession function! qualified and github have different function names dispite us having to sync them for this project!
+const booksInPossession = ({ id }, books, authors) => {
   let borrowedBooks = [];
     for (let book in books) {
       let bookObj = books[book];
