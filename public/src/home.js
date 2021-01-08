@@ -23,8 +23,7 @@ function booksBorrowedCount(books) {
   return numberOfBorrowedBooks;
 }
 
-const getMostCommonGenres = books => {
-  //this is the mostCommonGenres function!
+const mostCommonGenres = books => {
   let unorderedList = [];
   for (book in books) {
     let name = books[book].genre;
@@ -42,8 +41,7 @@ const getMostCommonGenres = books => {
   return orderedList.slice(0,5);
 }
 
-const getMostPopularBooks = books => {
-  //this is the mostPopularBooks function!
+const mostPopularBooks = books => {
   let unorderedList = [];
   for (book in books) {
     let name = books[book].title;
@@ -57,11 +55,11 @@ const getMostPopularBooks = books => {
   return orderedList.slice(0,5);
 }
 
-const getMostPopularAuthors = (books, authors) => {
-  //this is the mostPopularAuthors function!
+const mostPopularAuthors = (books, authors) => {
   const unorderedList = books.reduce((acc, book) => {
     const bookId = book.authorId;
     const findAuthorById = (authors, id) => authors.find((authorID) => authorID.id === id);
+    //here is my helper function!
     const foundAuthor = findAuthorById(authors, bookId);
     const firstName = foundAuthor.name.first;
     const lastName = foundAuthor.name.last;
