@@ -10,7 +10,7 @@ const numberOfBorrows = (accounts, books) => {
   let holderArray; 
     for (book in books) {
       holderArray = books[book].borrows.map((borrowArray) => {
-        return borrowArray.id
+        return borrowArray.id;
       });
       holderArray = holderArray.filter((id) => id === accounts.id);
       if (holderArray.length > 0) borrowsNumber++
